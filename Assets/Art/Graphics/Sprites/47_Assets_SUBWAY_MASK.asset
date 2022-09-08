@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 122_Assets_CHARACTER_4
+  m_Name: 47_Assets_SUBWAY_MASK
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: cfa859c6038404e8e856360e6e726c51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be278e9ee945146639513929570bf704, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
