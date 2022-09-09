@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 8d501fbb7e2e2694998ce552dcc2f821
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/LabJordan.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}
