@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: News
+  m_Name: Distributor
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 981122523, guid: 3bb1f8a78ec214404a63eedba51c4a9c, type: 3}
+      value: {fileID: -2100896337, guid: 5805765ce7fe042339e03a3fe3dafcc0, type: 3}
     - time: 1
-      value: {fileID: -1290287603, guid: 3bb1f8a78ec214404a63eedba51c4a9c, type: 3}
+      value: {fileID: -463350129, guid: 5805765ce7fe042339e03a3fe3dafcc0, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 981122523, guid: 3bb1f8a78ec214404a63eedba51c4a9c, type: 3}
-    - {fileID: -1290287603, guid: 3bb1f8a78ec214404a63eedba51c4a9c, type: 3}
+    - {fileID: -2100896337, guid: 5805765ce7fe042339e03a3fe3dafcc0, type: 3}
+    - {fileID: -463350129, guid: 5805765ce7fe042339e03a3fe3dafcc0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
