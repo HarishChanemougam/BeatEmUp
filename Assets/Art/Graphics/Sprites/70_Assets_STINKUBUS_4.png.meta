@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -2948,7 +2948,6 @@ TextureImporter:
       70_Assets_STINKUBUS_4_39: 932587005
       70_Assets_STINKUBUS_4_119: -356777032
       70_Assets_STINKUBUS_4_101: -1417026688
-      70_Assets_STINKUBUS_4_106: -803031622
       70_Assets_STINKUBUS_4_110: 1950935206
       70_Assets_STINKUBUS_4_26: 541754823
       70_Assets_STINKUBUS_4_121: -1135937004
@@ -3061,6 +3060,7 @@ TextureImporter:
       70_Assets_STINKUBUS_4_78: 1143858108
       70_Assets_STINKUBUS_4_132: 802604101
       70_Assets_STINKUBUS_4_130: 1408539423
+      70_Assets_STINKUBUS_4_106: -803031622
       70_Assets_STINKUBUS_4_56: 764134309
       70_Assets_STINKUBUS_4_74: 1330309546
       70_Assets_STINKUBUS_4_88: 1747979099
