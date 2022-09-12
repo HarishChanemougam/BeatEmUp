@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -1526,8 +1526,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       97_Assets_ENEMY_3_43: -580790441
-      97_Assets_ENEMY_3_55: -2077574874
-      97_Assets_ENEMY_3_23: 1489305868
+      97_Assets_ENEMY_3_58: -1427217620
+      97_Assets_ENEMY_3_17: -1309534295
       97_Assets_ENEMY_3_62: 184628836
       97_Assets_ENEMY_3_27: -81431809
       97_Assets_ENEMY_3_3: 1025043022
@@ -1581,14 +1581,14 @@ TextureImporter:
       97_Assets_ENEMY_3_1: -975681202
       97_Assets_ENEMY_3_39: 1785896787
       97_Assets_ENEMY_3_11: -1129107840
-      97_Assets_ENEMY_3_25: -1591349454
-      97_Assets_ENEMY_3_18: -331730224
-      97_Assets_ENEMY_3_14: -1347469474
-      97_Assets_ENEMY_3_40: 1887338434
-      97_Assets_ENEMY_3_22: 1515666390
-      97_Assets_ENEMY_3_58: -1427217620
       97_Assets_ENEMY_3_20: -820072687
-      97_Assets_ENEMY_3_17: -1309534295
+      97_Assets_ENEMY_3_25: -1591349454
+      97_Assets_ENEMY_3_14: -1347469474
+      97_Assets_ENEMY_3_23: 1489305868
+      97_Assets_ENEMY_3_18: -331730224
+      97_Assets_ENEMY_3_22: 1515666390
+      97_Assets_ENEMY_3_40: 1887338434
+      97_Assets_ENEMY_3_55: -2077574874
       97_Assets_ENEMY_3_37: 2008360442
       97_Assets_ENEMY_3_0: -1270039838
   spritePackingTag: 
