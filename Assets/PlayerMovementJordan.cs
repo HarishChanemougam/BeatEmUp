@@ -77,6 +77,6 @@ public class PlayerMovementJordan : MonoBehaviour
     {
         _direction = obj.ReadValue<Vector2>();
         _aimDirection = _direction;
-    }z
+    }
 
 }
