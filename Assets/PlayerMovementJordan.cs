@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputSettings;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementJordan : MonoBehaviour
 {
 
     [SerializeField] InputActionReference _move;
@@ -77,6 +77,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _direction = obj.ReadValue<Vector2>();
         _aimDirection = _direction;
-    }
+    }z
 
 }
