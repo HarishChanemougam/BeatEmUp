@@ -9,7 +9,7 @@ public class RedBadGuys : MonoBehaviour
     [SerializeField] PlayerMovement _player;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _animator;
-
+/*
     private float _startWaitTime = 4;
     private float _timeToRotate = 2;
     private float _walkSpeed = 5;
@@ -38,7 +38,7 @@ public class RedBadGuys : MonoBehaviour
 
     void Start()
     {
-        /*_player = FindObjectOfType<PlayerMovement>();*/
+        *//*_player = FindObjectOfType<PlayerMovement>();*//*
         m_PlayerPosition = Vector2.zero;
         m_IsPatrol = true;
         m_CaughtPlayer = false;
@@ -54,7 +54,7 @@ public class RedBadGuys : MonoBehaviour
         navMeshAgent.SetDestination(waypoints[m_currentWaypointIndex].position);
     }
 
-    /* private void FixedUpdate()
+    *//* private void FixedUpdate()
      {
          _rb.velocity = (transform.forward * _moveSpeed);
      }
@@ -62,7 +62,7 @@ public class RedBadGuys : MonoBehaviour
      void Update()
      {
          transform.LookAt(_player.transform.position);
-     }*/
+     }*//*
 
     private void Update()
     {
@@ -91,7 +91,7 @@ public class RedBadGuys : MonoBehaviour
 
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
-            /*if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector2.Distance(transform.position, GameObject.FindGameObjectsWithTag("Player")transform.position) >= 6f)
+            *//*if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector2.Distance(transform.position, GameObject.FindGameObjectsWithTag("Player")transform.position) >= 6f)
             {
                 m_IsPatrol = true;
                 m_PlayerNear = false;
@@ -106,7 +106,7 @@ public class RedBadGuys : MonoBehaviour
                 if (Vector2.Distance(transform.position, GameObject.FindGameObjectsWithTag("Player").transform.position) >= 2.5f)
                     Stop();
                 m_WaitTime -= Time.deltaTime;
-            }*/
+            }*//*
         }
     }
     private void Patroling()
@@ -232,5 +232,5 @@ public class RedBadGuys : MonoBehaviour
             }
         }
 
-    }
+    }*/
 }
