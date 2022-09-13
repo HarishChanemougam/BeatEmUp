@@ -43,8 +43,7 @@ public class PlayerMovementJordan : MonoBehaviour
     {
         Debug.Log($"{_direction}");
 
-        _animator.SetFloat("Horizontal", _aimDirection.x);
-        _animator.SetFloat("Vertical", _aimDirection.y);
+        
         _animator.SetBool("IsMoving", _direction.magnitude > 0.1f);
         _animator.SetBool("IsRunning", _isRunning);
 
