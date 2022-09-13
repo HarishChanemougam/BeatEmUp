@@ -6548,7 +6548,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 506176602}
-  - component: {fileID: 506176604}
   - component: {fileID: 506176603}
   - component: {fileID: 506176605}
   m_Layer: 0
@@ -6589,27 +6588,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0155751705, y: -0.13394606}
   m_Size: {x: 0.66821146, y: 1.0062301}
   m_Direction: 0
---- !u!50 &506176604
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506176601}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &506176605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6623,6 +6601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 427063213}
+  myRigidbody: {fileID: 669723859}
   range: 2
   moveSpeed: 2
 --- !u!1 &518473005
@@ -8222,6 +8201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 669723858}
+  - component: {fileID: 669723859}
   m_Layer: 0
   m_Name: RedBadGuys
   m_TagString: Untagged
@@ -8236,7 +8216,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669723857}
-  m_LocalRotation: {x: -0, y: -0.9992529, z: 0, w: -0.03864923}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: -5.87, y: -3.37, z: -0.32357353}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8244,7 +8224,28 @@ Transform:
   - {fileID: 383369458}
   m_Father: {fileID: 0}
   m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: -184.43, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!50 &669723859
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669723857}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!4 &669779953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4557782668679366314, guid: ce3a08a082213734b9dee9e619ccb97b, type: 3}

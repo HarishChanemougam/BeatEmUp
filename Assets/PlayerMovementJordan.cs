@@ -41,8 +41,7 @@ public class PlayerMovementJordan : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log($"{_direction}");
-
+        //Debug.Log($"{_direction}");
         
         _animator.SetBool("IsMoving", _direction.magnitude > 0.1f);
         _animator.SetBool("IsRunning", _isRunning);
