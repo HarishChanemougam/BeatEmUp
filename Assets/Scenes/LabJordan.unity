@@ -2649,8 +2649,8 @@ MonoBehaviour:
   _move: {fileID: -6300825042511620024, guid: 174669bfcf1eccd42aa915adbe04006e, type: 3}
   _sprint: {fileID: 0}
   _rb: {fileID: 568939503}
-  _animator: {fileID: 107679378}
-  _speed: 4
+  _animator: {fileID: 17671938}
+  _speed: 2
 --- !u!1 &1588748774
 GameObject:
   m_ObjectHideFlags: 3
