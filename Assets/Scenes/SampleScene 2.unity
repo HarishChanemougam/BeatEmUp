@@ -1334,6 +1334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 0
   _player: {fileID: 0}
+  _rb: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!1 &135249408
 GameObject:
   m_ObjectHideFlags: 0
@@ -14081,7 +14083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1159993339
 MonoBehaviour:
   m_ObjectHideFlags: 0
