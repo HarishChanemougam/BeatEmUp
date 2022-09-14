@@ -1,25 +1,51 @@
+using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RedBadGuys : MonoBehaviour
 {
-    [SerializeField] float _moveSpeed;
-    [SerializeField] PlayerMovement _player;
-    private Rigidbody _rb;
-    void Start()
+    [SerializeField] Rigidbody2D _root;
+    [SerializeField] float _walkSpeed;
+
+    public bool IsWalking => _appliedVector.magnitude > 0.01f;
+    public float WalkDistance => _appliedVector.magnitude;
+
+    Vector2 _directionAsked;
+    Vector2 _appliedVector;
+
+    void FixedUpdate()
     {
-        _rb = GetComponent<Rigidbody>();
-        _player = FindObjectOfType<PlayerMovement>();
+        _appliedVector = _directionAsked.normalized * Time.fixedDeltaTime * _walkSpeed;
+        if (_appliedVector.magnitude < 0.01f)
+        {
+            // Nothing
+        }
+        else if (_appliedVector.x < 0)
+        {
+            _root.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            _root.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        _root.MovePosition(_root.position + _appliedVector);
     }
 
-    private void FixedUpdate()
+    public void SetDirection(Vector2 vector2)
     {
-        _rb.velocity = (transform.forward * _moveSpeed);
+        _directionAsked = vector2;
     }
 
-    void Update()
+    #region Editor
+#if UNITY_EDITOR
+    void Reset()
     {
-        transform.LookAt(_player.transform.position);
+        _root = GetComponentInParent<Rigidbody2D>();
+        _walkSpeed = 5;
     }
+#endif
+    #endregion
+
 }

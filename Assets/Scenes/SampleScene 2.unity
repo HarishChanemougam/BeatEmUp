@@ -1334,6 +1334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 0
   _player: {fileID: 0}
+  _rb: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!1 &135249408
 GameObject:
   m_ObjectHideFlags: 0
