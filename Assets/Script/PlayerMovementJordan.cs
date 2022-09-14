@@ -3,49 +3,80 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovementJordan : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D _root;
-    [SerializeField] float _walkSpeed;
+    [SerializeField] InputActionReference _move;
+    [SerializeField] InputActionReference _sprint;
+    [SerializeField] Rigidbody2D _rb;
+    [SerializeField] Animator _animator;
 
-    public bool IsWalking => _appliedVector.magnitude > 0.01f;
-    public float WalkDistance => _appliedVector.magnitude;
+    [SerializeField] float _speed;
 
-    Vector2 _directionAsked;
-    Vector2 _appliedVector;
+    Vector3 _direction;
+    Vector3 _aimDirection;
+    bool _isRunning;
 
-    void FixedUpdate()
+    private void Start()
     {
-        _appliedVector = _directionAsked.normalized * Time.fixedDeltaTime * _walkSpeed;
-        if (_appliedVector.magnitude < 0.01f)
+        _move.action.started += StartMove;
+        _move.action.performed += UpdateMove;
+        _move.action.canceled += StopMove;
+
+        _sprint.action.started += StartSprint;
+        _sprint.action.canceled += StopSprint;
+    }
+
+    private void StopSprint(InputAction.CallbackContext obj)
+    {
+        _isRunning = false;
+    }
+
+    private void StartSprint(InputAction.CallbackContext obj)
+    {
+        _isRunning = true;
+    }
+
+    private void FixedUpdate()
+    {
+        Debug.Log($"{_direction}");
+
+      
+        _animator.SetBool("IsMoving", _direction.magnitude > 0.1f);
+        _animator.SetBool("IsRunning", _isRunning);
+
+        _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed));
+
+
+        if (_isRunning)
         {
-            // Nothing
-        }
-        else if (_appliedVector.x < 0)
-        {
-            _root.transform.rotation = Quaternion.Euler(0, 180, 0);
+            _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed * 2));
         }
         else
         {
-            _root.transform.rotation = Quaternion.Euler(0, 0, 0);
+            _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed));
         }
-        _root.MovePosition(_root.position + _appliedVector);
+
     }
 
-    public void SetDirection(Vector2 vector2)
+    private void StopMove(InputAction.CallbackContext obj)
     {
-        _directionAsked = vector2;
+        _direction = Vector3.zero;
     }
 
-    #region Editor
-#if UNITY_EDITOR
-    void Reset()
+    private void UpdateMove(InputAction.CallbackContext obj)
     {
-        _root = GetComponentInParent<Rigidbody2D>();
-        _walkSpeed = 5;
+        _direction = obj.ReadValue<Vector2>();
+        _aimDirection = _direction;
     }
-#endif
-    #endregion
+
+    private void StartMove(InputAction.CallbackContext obj)
+    {
+        _direction = obj.ReadValue<Vector2>();
+        _aimDirection = _direction;
+    }
+
+  
 
 }
