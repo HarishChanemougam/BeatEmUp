@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerMovementJordan : MonoBehaviour
 {
     [SerializeField] Rigidbody2D _root;
     [SerializeField] float _walkSpeed;
