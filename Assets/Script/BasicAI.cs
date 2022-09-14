@@ -9,7 +9,7 @@ public class BasicAI : MonoBehaviour
     [SerializeField] Transform _targetedPlayer;
 
     [Header("Actions")]
-    [SerializeField] Movement _movement;
+    [SerializeField] EntityMovement _movement;
     [SerializeField] Attack _attack;
 
     [Header("Conf")]
