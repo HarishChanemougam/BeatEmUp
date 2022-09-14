@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-internal class Movement
+internal class Movement : MonoBehaviour
 {
     public bool IsWalking { get; internal set; }
 

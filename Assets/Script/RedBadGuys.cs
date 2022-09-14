@@ -1,97 +1,51 @@
+using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyState
-{
-    Wander,
-    Follow,
-    Die,
-};
-
 public class RedBadGuys : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    [SerializeField] Rigidbody2D myRigidbody;
-    [SerializeField] float range = 2f;
-    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] Rigidbody2D _root;
+    [SerializeField] float _walkSpeed;
 
-    EnemyState currState = EnemyState.Wander;
+    public bool IsWalking => _appliedVector.magnitude > 0.01f;
+    public float WalkDistance => _appliedVector.magnitude;
 
-    // Update is called once per frame
-    void Update()
+    Vector2 _directionAsked;
+    Vector2 _appliedVector;
+
+    void FixedUpdate()
     {
-        // State
-        switch (currState)
+        _appliedVector = _directionAsked.normalized * Time.fixedDeltaTime * _walkSpeed;
+        if (_appliedVector.magnitude < 0.01f)
         {
-            case (EnemyState.Wander):
-                Wander();
-                break;
-            case (EnemyState.Follow):
-                Follow();
-                break;
-            case (EnemyState.Die):
-                // Die();
-                break;
+            // Nothing
         }
-
-        // À porté
-        if (IsPlayerInRange(range) && currState != EnemyState.Die)
+        else if (_appliedVector.x < 0)
         {
-            currState = EnemyState.Follow;
-        }
-        // Trop loin
-        else if (!IsPlayerInRange(range) && currState != EnemyState.Die)
-        {
-            currState = EnemyState.Wander;
-        }
-    }
-
-    private bool IsPlayerInRange(float range)
-    {
-        return Vector3.Distance(transform.position, target.position) <= range;
-    }
-
-    bool isFacingRight()
-    {
-        return transform.rotation.eulerAngles.y > 0;
-    }
-
-    void Wander()
-    {
-        myRigidbody.velocity = Vector2.zero;
-        return;
-
-        if (isFacingRight())
-        {
-            myRigidbody.velocity = new Vector2(moveSpeed, 0f);
+            _root.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         else
         {
-            myRigidbody.velocity = new Vector2(-moveSpeed, 0f);
+            _root.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+        _root.MovePosition(_root.position + _appliedVector);
     }
 
-    //void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    transform.localScale = new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)), 1f);
-    //}
-
-    void Follow()
+    public void SetDirection(Vector2 vector2)
     {
-        if (transform.position.x > target.position.x)
-        {
-            //target is left
-            transform.localScale = new Vector2(-1, 1);
-            myRigidbody.velocity = new Vector2(-moveSpeed, 0f);
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), moveSpeed * Time.deltaTime);
-        }
-        else if (transform.position.x < target.position.x)
-        {
-            //target is right
-            transform.localScale = new Vector2(1, 1);
-            myRigidbody.velocity = new Vector2(moveSpeed, 0f);
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), moveSpeed * Time.deltaTime);
-        }
+        _directionAsked = vector2;
     }
+
+    #region Editor
+#if UNITY_EDITOR
+    void Reset()
+    {
+        _root = GetComponentInParent<Rigidbody2D>();
+        _walkSpeed = 5;
+    }
+#endif
+    #endregion
+
 }

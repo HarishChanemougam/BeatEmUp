@@ -17,14 +17,14 @@ public class BasicAI : MonoBehaviour
     [SerializeField] float _moveThreshold;
     [SerializeField] float _attackCooldown;
 
-    float _attackCooldownRuntime;
+   /* float _attackCooldownRuntime;
 
     private void Start()
     {
         _attackCooldownRuntime = 0f;
     }
-
-    private void Update()
+*/
+    /*private void Update()
     {
         _attackCooldownRuntime -= Time.deltaTime;
 
@@ -46,9 +46,9 @@ public class BasicAI : MonoBehaviour
         {
             _movement.SetDirection(Vector2.zero);
         }
-    }
+    }*/
 
-    #region Editor
+  /*  #region Editor
 #if UNITY_EDITOR
     void OnDrawGizmosSelected()
     {
@@ -66,5 +66,5 @@ public class BasicAI : MonoBehaviour
     }
 #endif
     #endregion
-
+*/
 }
