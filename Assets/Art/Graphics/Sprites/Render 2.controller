@@ -812,17 +812,11 @@ AnimatorController:
   m_Name: Render 2
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Blend
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 1
-    m_Controller: {fileID: 0}
   - m_Name: Idel
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: IsMoving
     m_Type: 4
@@ -846,7 +840,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 0}
   - m_Name: IsDeath
     m_Type: 4
@@ -856,7 +850,7 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: Speed
     m_Type: 1
-    m_DefaultFloat: 0
+    m_DefaultFloat: 5.6
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
@@ -1316,7 +1310,7 @@ AnimatorStateMachine:
     m_Position: {x: 750, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1656314738386102992}
-    m_Position: {x: -570, y: 640, z: 0}
+    m_Position: {x: -580, y: 670, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 761863564479620029}
     m_Position: {x: 290, y: -780, z: 0}
