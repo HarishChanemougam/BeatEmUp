@@ -1332,10 +1332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b16b530cc21357840821043ac5d537bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 0
-  _player: {fileID: 0}
-  _rb: {fileID: 0}
-  _animator: {fileID: 0}
+  _root: {fileID: 0}
+  _walkSpeed: 0
 --- !u!1 &135249408
 GameObject:
   m_ObjectHideFlags: 0
@@ -14096,11 +14094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfddd0262581e341ad0ab3d83cf84ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveInput: {fileID: 0}
-  _root: {fileID: 0}
-  _animator: {fileID: 855508312}
-  _movingThreshold: 0
-  _speed: 5
 --- !u!50 &1159993340
 Rigidbody2D:
   serializedVersion: 4
@@ -17822,10 +17815,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _move: {fileID: 2138995133242212122, guid: 738553289e0a5e047a69609c6f7ad1da, type: 3}
-  _sprint: {fileID: 0}
+  _sprint: {fileID: -2412235914218561459, guid: 738553289e0a5e047a69609c6f7ad1da, type: 3}
   _rb: {fileID: 568939503}
   _animator: {fileID: 241399474}
-  _speed: 2
+  _speed: 0
 --- !u!1 &1486207762
 GameObject:
   m_ObjectHideFlags: 0

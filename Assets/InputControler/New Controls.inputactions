@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "PlayerWalk",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "67460b22-7531-403f-801c-3603e7d2ce43",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -48,7 +48,7 @@
                 {
                     "name": "up",
                     "id": "90e45759-b891-4d14-b25b-b0ee00d4b361",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -59,7 +59,7 @@
                 {
                     "name": "down",
                     "id": "a43edc9a-b2e7-45cb-ad13-5e193194712f",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -70,7 +70,7 @@
                 {
                     "name": "left",
                     "id": "772c89ce-3f7a-4a13-b1b9-ee34196a190b",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/v",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -81,7 +81,7 @@
                 {
                     "name": "right",
                     "id": "0251d431-7faa-453d-93a5-e0359c8344af",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
