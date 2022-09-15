@@ -94,6 +94,11 @@ public class PlayerMovementJordan : MonoBehaviour
         if(_health.CurrentHealth <= 0)
         {
             _animator.SetBool("IsDeath" ,true) ;
+
+            if(_health.CurrentHealth <=0)
+            {
+                FindObjectOfType<EndGame>().GameOver();
+            }
         }
 
         else
@@ -101,6 +106,8 @@ public class PlayerMovementJordan : MonoBehaviour
             _animator.SetBool("IsDeath", false); ;
         }
     }
+
+    
 
     private void StartMove(InputAction.CallbackContext obj)
     {

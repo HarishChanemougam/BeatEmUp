@@ -13,10 +13,33 @@ public class Health : MonoBehaviour
     [SerializeField] UnityEvent _onDie;
     [SerializeField] HealthBar _healthBar;
 
+    int _currentHealth;
+
     public event UnityAction OnDamage;
     public event UnityAction OnDie;
 
-    [ShowNativeProperty] public int CurrentHealth { get; private set; }
+    public int CurrentHealth 
+    { 
+        get
+        {
+            return _currentHealth;
+        }
+        // set
+        // {
+        //     if(value <0)
+        //     {
+        //         _currentHealth = 0;
+        //     }
+        //     else if(value > _maxHealth)
+        //     {
+        //         _currentHealth = _maxHealth;
+        //     }
+        //     else
+        //     {
+        //         _currentHealth = value;
+        //     }
+        // }
+    }
 
     public int MyHPProgress
     {
@@ -27,13 +50,13 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        CurrentHealth = _startHealth;
+        _currentHealth = _startHealth;
         _healthBar.setMaxHealth(_maxHealth);
     }
 
     internal void Damage()
     {
-        CurrentHealth--;    
+        _currentHealth--;    
         OnDamage?.Invoke();
 
         if (IsDead)

@@ -1850,6 +1850,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df1781b9ec6730e48bdd73e6913300bc, type: 3}
+--- !u!1 &162581256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 162581258}
+  - component: {fileID: 162581257}
+  m_Layer: 0
+  m_Name: EndGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &162581257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162581256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95ad324500f04f4894cb692cfe9fc69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wait: 3
+--- !u!4 &162581258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162581256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.260073, y: -2.7989936, z: -37.636223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &166653510
 GameObject:
   m_ObjectHideFlags: 0
@@ -4137,6 +4182,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308711700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7014505360441253634, guid: 1b5cef2f71eb0524aab087a4d41dd0bb, type: 3}
+  m_PrefabInstance: {fileID: 977594966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33bbabcf61b20724193df8321e93a038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &312061869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4557782668679366314, guid: ce3a08a082213734b9dee9e619ccb97b, type: 3}
@@ -12146,6 +12202,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 704606101666701916, guid: 1b5cef2f71eb0524aab087a4d41dd0bb, type: 3}
+      propertyPath: _health
+      value: 
+      objectReference: {fileID: 308711700}
     - target: {fileID: 6631259774379375873, guid: 1b5cef2f71eb0524aab087a4d41dd0bb, type: 3}
       propertyPath: m_RootOrder
       value: 17
