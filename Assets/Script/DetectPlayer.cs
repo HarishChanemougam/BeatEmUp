@@ -6,6 +6,7 @@ public class DetectPlayer : MonoBehaviour
 {
     [SerializeField] RedBadGuys _brain;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.attachedRigidbody == null) return;

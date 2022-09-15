@@ -38,7 +38,7 @@ public class Health : MonoBehaviour
 
         if (IsDead)
         {
-            OnDie?.Invoke();
+            OnDie.Invoke();
         }
 
         _healthBar.setHealth(CurrentHealth);

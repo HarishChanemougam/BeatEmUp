@@ -13,13 +13,16 @@ public class PlayerMovementJordan : MonoBehaviour
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _animator;
     [SerializeField] AttackHitBox _hitbox;
+    [SerializeField] Health _health;
 
     [SerializeField] float _speed;
+    
 
     Vector3 _direction;
     Vector3 _aimDirection;
     bool _isRunning;
     bool _isAttack;
+    bool _IsDeath;
 
     private void Start()
     {
@@ -48,7 +51,8 @@ public class PlayerMovementJordan : MonoBehaviour
         //Debug.Log($"{_direction}");
         _animator.SetBool("IsMoving", _direction.magnitude > 0.1f);
         _animator.SetBool("IsRunning", _isRunning);
-
+        _animator.SetBool("IsDeath", _IsDeath);
+      
 
         // Move
         if (_isRunning)
@@ -83,6 +87,19 @@ public class PlayerMovementJordan : MonoBehaviour
             _rb.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
+    }
+
+   private void Update()
+    {
+        if(_health.CurrentHealth <= 0)
+        {
+            _animator.SetBool("IsDeath" ,true) ;
+        }
+
+        else
+        {
+            _animator.SetBool("IsDeath", false); ;
+        }
     }
 
     private void StartMove(InputAction.CallbackContext obj)
