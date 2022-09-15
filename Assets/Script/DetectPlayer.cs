@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DetectPlayer : MonoBehaviour
 {
-    [SerializeField] AIBrain _brain;
+    [SerializeField] RedBadGuys _brain;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.attachedRigidbody == null) return;
         if (collision.attachedRigidbody.TryGetComponent<PlayerTag>(out var player))
         {
             _brain.SetTarget(player);

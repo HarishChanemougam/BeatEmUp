@@ -12,7 +12,7 @@ public class PlayerMovementJordan : MonoBehaviour
     [SerializeField] InputActionReference _attack;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Animator _animator;
-
+    [SerializeField] AttackHitBox _hitbox;
 
     [SerializeField] float _speed;
 
@@ -31,9 +31,6 @@ public class PlayerMovementJordan : MonoBehaviour
         _sprint.action.canceled += StopSprint;
 
         _attack.action.started += StartAttack;
-        _attack.action.canceled += StopAttack;
-
-
     }
 
     private void StopSprint(InputAction.CallbackContext obj)
@@ -48,19 +45,16 @@ public class PlayerMovementJordan : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log($"{_direction}");
-
+        //Debug.Log($"{_direction}");
         _animator.SetBool("IsMoving", _direction.magnitude > 0.1f);
         _animator.SetBool("IsRunning", _isRunning);
-        _animator.SetBool("isAttack", _isAttack);
 
-        //_rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed));
 
+        // Move
         if (_isRunning)
         {
             _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed * 2));
             _animator.SetFloat("Speed", 10);
-
         }
         else
         {
@@ -73,7 +67,20 @@ public class PlayerMovementJordan : MonoBehaviour
             {
                 _animator.SetFloat("Speed", 5);
             }
+        }
 
+        // Rotation
+        if (_direction.magnitude < 0.01f)
+        {
+            // Nothing
+        }
+        else if (_direction.x < 0)
+        {
+            _rb.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            _rb.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
     }
@@ -93,16 +100,9 @@ public class PlayerMovementJordan : MonoBehaviour
         _direction = Vector3.zero;
     }
 
-
-
-  private void StartAttack(InputAction.CallbackContext obj)
+    private void StartAttack(InputAction.CallbackContext obj)
     {
-        _isAttack = true;
+        _animator.SetTrigger("isAttack");
+        _hitbox.AttackAllCharacters();
     }
-
-private void StopAttack(InputAction.CallbackContext obj)
-    {
-        _isAttack = false;
-    }
-
 }

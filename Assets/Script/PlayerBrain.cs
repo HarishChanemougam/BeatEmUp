@@ -9,19 +9,15 @@ using UnityEngine.InputSystem;
 public class PlayerBrain : MonoBehaviour
 {
     [Header("Input")]
-    [SerializeField] InputActionReference _moveInput;
+    //[SerializeField] InputActionReference _moveInput;
     [SerializeField] InputActionReference _attackInput;
 
     [Header("Actions")]
-    [SerializeField] EntityMovement _movement;
+    //[SerializeField] PlayerMovementJordan _movement;
     [SerializeField] EntityAttack _attack;
 
     void Start()
     {
-        _moveInput.action.started += Move;
-        _moveInput.action.performed += Move;
-        _moveInput.action.canceled += StopMove;
-
         _attackInput.action.started += Attack;
     }
 
@@ -30,13 +26,13 @@ public class PlayerBrain : MonoBehaviour
         _attack.LaunchAttack();
     }
 
-    void Move(InputAction.CallbackContext obj)
-    {
-        _movement.SetDirection(obj.ReadValue<Vector2>());
-    }
-
-    void StopMove(InputAction.CallbackContext obj)
-    {
-        _movement.SetDirection(Vector2.zero);
-    }
+    //void Move(InputAction.CallbackContext obj)
+    //{
+    //    _movement.SetDirection(obj.ReadValue<Vector2>());
+    //}
+    //
+    //void StopMove(InputAction.CallbackContext obj)
+    //{
+    //    _movement.SetDirection(Vector2.zero);
+    //}
 }

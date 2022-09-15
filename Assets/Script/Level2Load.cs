@@ -13,17 +13,12 @@ public class Level2Load : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Verifier si collision est bien le joueur
-
-
-        if(collision.attachedRigidbody)
+        if (collision.attachedRigidbody == null) return;
+        if(collision.attachedRigidbody.TryGetComponent<PlayerTag>(out var pt))
         {
-
-        LoadLevel();
-
+            LoadLevel();
+            Debug.Log("Level2Enter");   
         }
-
-        Debug.Log("Level2Enter");
-        
     }
 
     public void LoadLevel()

@@ -7,8 +7,7 @@ public class AttackHitBox : MonoBehaviour
 {
     [SerializeField] Collider2D _ignoreSelf;
 
-    [ShowNonSerializedField] List<Health> _detectedHealths;
-    public IEnumerable<Health> DetectedHealths => _detectedHealths;
+    [SerializeField] List<Health> _detectedHealths;
 
     void Awake()
     {
@@ -35,6 +34,14 @@ public class AttackHitBox : MonoBehaviour
         {
             if (_detectedHealths.Contains(h) == false) return;
             _detectedHealths.Remove(h);
+        }
+    }
+
+    public void AttackAllCharacters()
+    {
+        foreach(Health h in _detectedHealths)
+        {
+            h.Damage();
         }
     }
 
