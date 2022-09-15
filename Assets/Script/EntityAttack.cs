@@ -10,7 +10,7 @@ public class EntityAttack : MonoBehaviour
     {
         Debug.Log($"{transform.parent.name} : OH MY GOD");
 
-        _animator.SetTrigger("Attack");
+        _animator.SetTrigger("isAttack");
 
     }
 
